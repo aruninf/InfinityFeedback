@@ -81,7 +81,7 @@
     "@siteping/core": "workspace:*",
     "@siteping/server": "workspace:*",
     "drizzle-kit": "^0.31.11",
-    "drizzle-orm": "^0.45.3"
+    "drizzle-orm": "^0.45.4"
   },
   "peerDependencies": {
     "drizzle-orm": ">=0.45.0 <1"

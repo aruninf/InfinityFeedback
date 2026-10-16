@@ -133,6 +133,6 @@
     "@siteping/core": "workspace:*",
     "@smithy/signature-v4": "^5.7.4",
     "drizzle-kit": "^0.31.11",
-    "drizzle-orm": "^0.45.3"
+    "drizzle-orm": "^0.45.4"
   }
 }
