@@ -46,7 +46,7 @@ export function Footer() {
           <span>
             Built by{" "}
             <a
-              href="https://github.com/InfinitySoftSystem"
+              href="https://github.com/aruninf/InfinityFeedback"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 transition-colors hover:text-gray-300"
