@@ -4,7 +4,7 @@
 
 # @siteping/cli
 
-Set up and check [SitePing](https://github.com/NeosiaNexus/SitePing) from the command line. Single self-contained binary, zero runtime dependencies, Node ≥ 20.
+Set up and check [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) from the command line. Single self-contained binary, zero runtime dependencies, Node ≥ 20.
 
 **[Documentation](https://siteping.dev/docs/cli)**
 
@@ -33,4 +33,4 @@ Flags, exit codes, non-TTY behavior, and what each command writes: **[siteping.d
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

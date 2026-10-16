@@ -4,7 +4,7 @@
 
 # @siteping/adapter-drizzle
 
-[Drizzle ORM](https://orm.drizzle.team) store for [SitePing](https://github.com/NeosiaNexus/SitePing), on **PostgreSQL** (node-postgres, postgres.js, Neon HTTP, PGlite…) or **Turso / libSQL**.
+[Drizzle ORM](https://orm.drizzle.team) store for [InfinityFeedback](https://github.com/aruninf/InfinityFeedback), on **PostgreSQL** (node-postgres, postgres.js, Neon HTTP, PGlite…) or **Turso / libSQL**.
 
 **[Documentation](https://siteping.dev/docs/adapters/drizzle)**
 
@@ -37,4 +37,4 @@ Schema setup and migrations, serving the store, options, the screenshot storage 
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

@@ -7,23 +7,23 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://siteping.dev"),
   title: {
-    default: "SitePing — Client feedback, pinned to the pixel",
-    template: "%s — SitePing",
+    default: "InfinityFeedback — Client feedback, pinned to the pixel",
+    template: "%s — InfinityFeedback",
   },
   description:
     "Open-source feedback widget for freelancers and agencies. DOM-anchored annotations, self-hosted, zero SaaS fees.",
   openGraph: {
-    title: "SitePing — Client feedback, pinned to the pixel",
+    title: "InfinityFeedback — Client feedback, pinned to the pixel",
     description:
       "Open-source feedback widget for freelancers and agencies. DOM-anchored annotations, self-hosted, zero SaaS fees.",
     url: "https://siteping.dev",
-    siteName: "SitePing",
+    siteName: "InfinityFeedback",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SitePing — Client feedback, pinned to the pixel",
+    title: "InfinityFeedback — Client feedback, pinned to the pixel",
     description: "Open-source feedback widget. Self-hosted, DOM-anchored, npm install and go.",
   },
   other: {

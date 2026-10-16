@@ -1,7 +1,7 @@
 const links = [
   {
     label: "GitHub",
-    href: "https://github.com/NeosiaNexus/SitePing",
+    href: "https://github.com/aruninf/InfinityFeedback",
   },
   {
     label: "npm",
@@ -19,7 +19,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <div>
-            <p className="text-lg font-bold tracking-tight text-white">SitePing</p>
+            <p className="text-lg font-bold tracking-tight text-white">InfinityFeedback</p>
             <p className="mt-1 text-sm text-gray-500">Open-source feedback widget</p>
           </div>
 
@@ -46,12 +46,12 @@ export function Footer() {
           <span>
             Built by{" "}
             <a
-              href="https://github.com/NeosiaNexus"
+              href="https://github.com/InfinitySoftSystem"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 transition-colors hover:text-gray-300"
             >
-              @neosianexus
+              Arun Infinity · Infinity Soft System
             </a>
           </span>
         </div>

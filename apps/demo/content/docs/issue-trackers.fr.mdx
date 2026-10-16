@@ -36,7 +36,7 @@ export const { GET, POST, PATCH, DELETE, OPTIONS } = createSitepingHandler({
 });
 ```
 
-Le jeton est un [jeton d'accès personnel à granularité fine](https://github.com/settings/personal-access-tokens) limité à ce dépôt, avec la permission **Issues** en **Read and write**. Son compte doit aussi avoir un **accès en écriture** au dépôt : GitHub retire sans rien dire les labels d'un nouveau ticket créé par quelqu'un d'autre, et sans son label `siteping`, SitePing ne retrouve plus le ticket. Dans ce cas, le handler journalise une erreur qui nomme la permission manquante.
+Le jeton est un [jeton d'accès personnel à granularité fine](https://github.com/settings/personal-access-tokens) limité à ce dépôt, avec la permission **Issues** en **Read and write**. Son compte doit aussi avoir un **accès en écriture** au dépôt : GitHub retire sans rien dire les labels d'un nouveau ticket créé par quelqu'un d'autre, et sans son label `siteping`, InfinityFeedback ne retrouve plus le ticket. Dans ce cas, le handler journalise une erreur qui nomme la permission manquante.
 
 Sur GitHub Enterprise Server, passez `apiBaseUrl: "https://github.acme.com/api/v3"`.
 
@@ -66,11 +66,11 @@ Sur une instance auto-hébergée, passez `apiBaseUrl: "https://gitlab.acme.com/a
 
 Passer de `open` à `in_progress` et inversement ne fait que chercher le ticket, et n'écrit rien sur un ticket ouvert. Avec `syncStatus: false`, les tickets sont seulement créés, puis fermés à la suppression.
 
-La synchronisation va dans un seul sens, de SitePing vers le gestionnaire : fermer le ticket sur GitHub ne résout pas le feedback.
+La synchronisation va dans un seul sens, de InfinityFeedback vers le gestionnaire : fermer le ticket sur GitHub ne résout pas le feedback.
 
 ## Ce que contient un ticket
 
-Le titre est `[SitePing]` suivi du message sur une ligne, tronqué à 255 caractères. Le corps a ces sections :
+Le titre est `[InfinityFeedback]` suivi du message sur une ligne, tronqué à 255 caractères. Le corps a ces sections :
 
 - **Message**
 - **Type**
@@ -109,7 +109,7 @@ Tout le corps vient de visiteurs anonymes, il est donc cité comme du code. Le l
 | `onIssueCreated` | `(feedback, issue) => void` | — | Appelée avec chaque ticket ouvert (`issue.key`, `issue.url`), pour envoyer son lien dans une messagerie ou le garder, par exemple. Le `POST` du visiteur l'attend, tout comme les changements de statut et les suppressions suivants du feedback et la prochaine suppression de son projet : elle ne doit donc attendre aucun d'eux elle-même. Une exception est journalisée comme une création qui a échoué |
 | `instance` | `string` | — | Nom de ce déploiement quand plusieurs partagent un dépôt. Voir [comment les tickets sont retrouvés](#comment-les-tickets-sont-retrouvés) |
 | `syncStatus` | `boolean` | `true` | Ferme et rouvre le ticket quand le statut change |
-| `deletedCommentText` | `(feedbackId) => string` | ``SitePing feedback `<id>` was deleted.`` | Le commentaire laissé sur le ticket d'un feedback supprimé. Une suppression rejouée le retrouve par une première ligne cachée : le texte peut donc changer d'un appel à l'autre |
+| `deletedCommentText` | `(feedbackId) => string` | ``InfinityFeedback feedback `<id>` was deleted.`` | Le commentaire laissé sur le ticket d'un feedback supprimé. Une suppression rejouée le retrouve par une première ligne cachée : le texte peut donc changer d'un appel à l'autre |
 
 `createGitHubTracker` et `createGitLabTracker` prennent aussi `apiBaseUrl`, `fetch` (pour un proxy ou des tests), `timeoutMs` (par requête, `5000` par défaut) et `maxListedPages` (`10` par défaut, voir [comment les tickets sont retrouvés](#comment-les-tickets-sont-retrouvés)).
 
@@ -154,7 +154,7 @@ createIssueTrackerHooks({
 
 ## Latence et échecs
 
-- **À la création.** `onCreated` est attendu avant que le `POST` réponde : le widget attend donc une requête au gestionnaire, au plus `timeoutMs` (5 secondes par défaut), puis `onIssueCreated`. Si elle échoue (gestionnaire en panne, mauvais jeton), le feedback est enregistré quand même et l'erreur part dans le `logger` du serveur sous la forme `[siteping] Hook onCreated failed`, avec l'id du feedback. Rien ne la rejoue : ce feedback n'a pas de ticket. Quand le label a été retiré, le ticket existe bien et la même erreur nomme la permission manquante, mais SitePing ne peut plus retrouver ce ticket : ni les changements de statut ni les suppressions ne l'atteignent. Corrigez la permission, puis posez le label sur ces tickets ou fermez-les à la main.
+- **À la création.** `onCreated` est attendu avant que le `POST` réponde : le widget attend donc une requête au gestionnaire, au plus `timeoutMs` (5 secondes par défaut), puis `onIssueCreated`. Si elle échoue (gestionnaire en panne, mauvais jeton), le feedback est enregistré quand même et l'erreur part dans le `logger` du serveur sous la forme `[siteping] Hook onCreated failed`, avec l'id du feedback. Rien ne la rejoue : ce feedback n'a pas de ticket. Quand le label a été retiré, le ticket existe bien et la même erreur nomme la permission manquante, mais InfinityFeedback ne peut plus retrouver ce ticket : ni les changements de statut ni les suppressions ne l'atteignent. Corrigez la permission, puis posez le label sur ces tickets ou fermez-les à la main.
 - **Au changement de statut.** Le `PATCH` attend la [recherche du ticket](#comment-les-tickets-sont-retrouvés), une recherche plus une requête de liste quand la recherche ne trouve rien (et jusqu'à `maxListedPages` de plus quand elle échoue), puis une écriture, chaque requête durant au plus `timeoutMs`. Un gestionnaire qui ne répond pas à la recherche dans le délai `timeoutMs` est tenu pour en panne, et la recherche du ticket s'arrête là. Une recherche qui échoue aussitôt (connexion refusée, limite de débit) passe la main à la liste. Un échec de synchronisation est journalisé de la même façon, et le nouveau statut est conservé.
 - **À la suppression.** `onDeleting` cherche le ticket de la même façon et le ferme avant que l'enregistrement parte. Si le gestionnaire échoue, le `DELETE` répond `502` et garde l'enregistrement : rejouez-le quand le gestionnaire est revenu. Le commentaire n'est laissé qu'une fois, même d'une tentative à l'autre.
 - **À la suppression d'un projet entier.** Les tickets du projet sont d'abord listés, et la suppression est refusée quand la liste s'arrête à `maxListedPages` avec des tickets restants (voir [comment les tickets sont retrouvés](#comment-les-tickets-sont-retrouvés)). Ils sont ensuite traités l'un après l'autre, avec jusqu'à trois requêtes chacun : fermer le ticket s'il est ouvert, lire ses commentaires, commenter. Un projet qui a beaucoup de tickets peut donc atteindre la limite de débit du gestionnaire (GitHub accepte environ 80 requêtes de création de contenu par minute) ou la durée maximale d'une fonction serverless. Tous les enregistrements sont alors gardés : le `DELETE` répond `502` quand le gestionnaire refuse une requête, ou renvoie l'erreur de délai de la plateforme (`504` sur Vercel, par exemple) quand la fonction est arrêtée. Après une limite de débit, rejouez-le quelques minutes plus tard : un ticket déjà fermé et commenté ne coûte plus qu'une lecture, donc chaque tentative va plus loin. Une limite de durée, elle, ne se contourne pas ainsi : chaque tentative relit les commentaires des tickets déjà traités, elle ne traite donc jamais plus de tickets qu'une exécution n'en laisse le temps, et rejouer la suppression d'un projet plus gros n'aboutit jamais. Supprimez plutôt ses feedbacks un par un, ou faites passer cette suppression par un handler sans ces hooks et fermez ses tickets vous-même.
@@ -171,9 +171,9 @@ Des déploiements qui partagent un dépôt et un nom de projet (la recette et la
 
 Pour synchroniser un statut ou supprimer un feedback, le gestionnaire est d'abord interrogé par une recherche sur l'identifiant du feedback (l'API de recherche de GitHub, le paramètre `search` de GitLab). Si la recherche ne trouve rien, les hooks listent la première page des tickets `siteping`, du plus récent au plus ancien : l'index de recherche de GitHub a quelques secondes de retard sur un nouveau ticket. Une recherche qui a répondu fait foi pour le reste, puisqu'elle ne manque que les tickets trop récents pour son index. Quand elle a échoué (GitHub accepte 30 recherches par minute), ou qu'elle a trouvé plus de tickets citant l'identifiant du feedback qu'elle n'en a renvoyé, les hooks listent plus loin. La suppression d'un projet entier liste toujours tous les tickets.
 
-La liste s'arrête après `maxListedPages` pages de 100 tickets, et elle compte les tickets SitePing de tous les projets du dépôt, fermés compris : un dépôt finit donc par la dépasser. Au-delà, les hooks ne devinent pas. La suppression d'un projet est refusée par un `502` plutôt que de laisser ouverts les tickets plus anciens, et il en va de même pour une synchronisation de statut ou une suppression dont la recherche n'a pas tranché et dont le ticket n'a pas été listé. Avec la valeur par défaut de 10, la limite est de 1 000 tickets SitePing, les plus récents du dépôt. Augmentez-la pour un historique plus grand : seules la suppression d'un projet et les recherches d'un ticket que l'API de recherche ne tranche pas listent aussi loin.
+La liste s'arrête après `maxListedPages` pages de 100 tickets, et elle compte les tickets InfinityFeedback de tous les projets du dépôt, fermés compris : un dépôt finit donc par la dépasser. Au-delà, les hooks ne devinent pas. La suppression d'un projet est refusée par un `502` plutôt que de laisser ouverts les tickets plus anciens, et il en va de même pour une synchronisation de statut ou une suppression dont la recherche n'a pas tranché et dont le ticket n'a pas été listé. Avec la valeur par défaut de 10, la limite est de 1 000 tickets InfinityFeedback, les plus récents du dépôt. Augmentez-la pour un historique plus grand : seules la suppression d'un projet et les recherches d'un ticket que l'API de recherche ne tranche pas listent aussi loin.
 
-Seuls les tickets avec le label comptent. Sur GitHub et GitLab, une personne extérieure ne peut pas poser de label sur un ticket, et ne peut donc pas en faire passer un pour un ticket de SitePing.
+Seuls les tickets avec le label comptent. Sur GitHub et GitLab, une personne extérieure ne peut pas poser de label sur un ticket, et ne peut donc pas en faire passer un pour un ticket de InfinityFeedback.
 
 ## Autres gestionnaires
 
@@ -194,7 +194,7 @@ const tracker: IssueTracker = {
   async listComments(reference) {
     return []; // le texte des commentaires, chaque première ligne telle qu'addComment l'a reçue
   },
-  // Chaque ticket SitePing dont le corps contient `marker`, fermés compris,
+  // Chaque ticket InfinityFeedback dont le corps contient `marker`, fermés compris,
   // du plus récent au plus ancien, pas plus de `maxPages` pages quand elle
   // est donnée, et si vous vous êtes arrêté avant le dernier.
   async findSitepingIssues(marker, { maxPages } = {}) {
@@ -212,6 +212,6 @@ const tracker: IssueTracker = {
 
 Levez une exception quand un appel échoue, et les [règles d'échec](#latence-et-échecs) ci-dessus s'appliquent. Les gestionnaires qui ne parlent pas Markdown peuvent façonner le corps avec `formatIssue`.
 
-Sans `searchSitepingIssues`, rien ne tranche une recherche de ticket au-delà de la première page : chaque changement de statut ou suppression dont le ticket n'y est pas liste jusqu'à votre limite, et dès que le gestionnaire compte plus de tickets SitePing que cela, celle dont le ticket n'est pas listé est refusée. Cela inclut un feedback qui n'a jamais eu de ticket, qui ne peut alors plus être supprimé. Fournissez une recherche dès que le gestionnaire en a une.
+Sans `searchSitepingIssues`, rien ne tranche une recherche de ticket au-delà de la première page : chaque changement de statut ou suppression dont le ticket n'y est pas liste jusqu'à votre limite, et dès que le gestionnaire compte plus de tickets InfinityFeedback que cela, celle dont le ticket n'est pas listé est refusée. Cela inclut un feedback qui n'a jamais eu de ticket, qui ne peut alors plus être supprimé. Fournissez une recherche dès que le gestionnaire en a une.
 
-Synchroniser dans l'autre sens, pour que fermer un ticket résolve son feedback, demande un handler de webhooks du gestionnaire et n'existe pas encore ([#318](https://github.com/NeosiaNexus/SitePing/issues/318)).
+Synchroniser dans l'autre sens, pour que fermer un ticket résolve son feedback, demande un handler de webhooks du gestionnaire et n'existe pas encore ([#318](https://github.com/aruninf/InfinityFeedback/issues/318)).

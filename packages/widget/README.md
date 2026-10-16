@@ -9,7 +9,7 @@
 
 A lightweight feedback widget that lets your clients annotate websites during development. Draw rectangles (or right-click), leave comments, track bugs — directly on the live site, anchored to the exact DOM element.
 
-Part of [SitePing](https://github.com/NeosiaNexus/SitePing) — **[live demo](https://siteping.dev/demo)** · **[documentation](https://siteping.dev/docs/widget)**.
+Part of [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) — **[live demo](https://siteping.dev/demo)** · **[documentation](https://siteping.dev/docs/widget)**.
 
 ## Install
 
@@ -58,4 +58,4 @@ Every option with its real default and behavior: **[siteping.dev/docs/widget/con
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

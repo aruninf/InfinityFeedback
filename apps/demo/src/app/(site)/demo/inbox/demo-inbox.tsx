@@ -94,7 +94,7 @@ export function DemoInbox() {
     locale,
     className: "h-full",
     // Who the demo replies as: without an author, threads are read-only.
-    author: { name: "SitePing demo" },
+    author: { name: "InfinityFeedback demo" },
   } as const;
 
   return (

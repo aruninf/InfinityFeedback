@@ -36,16 +36,16 @@
     "demo",
     "typescript"
   ],
-  "author": "neosianexus",
+  "author": "Arun Infinity",
   "license": "MIT",
   "homepage": "https://siteping.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeosiaNexus/SitePing.git",
+    "url": "git+https://github.com/aruninf/InfinityFeedback.git",
     "directory": "packages/adapter-memory"
   },
   "bugs": {
-    "url": "https://github.com/NeosiaNexus/SitePing/issues"
+    "url": "https://github.com/aruninf/InfinityFeedback/issues"
   },
   "publishConfig": {
     "access": "public"

@@ -3,7 +3,7 @@ title: Writing an adapter
 description: Build your own store adapter with @siteping/adapter-kit — the engine, the contract, and the conformance suite.
 ---
 
-The four bundled adapters cover most setups, but SitePing stores are pluggable: anything that can hold records can back the widget and the dashboard. `@siteping/adapter-kit` is the published package for that — it carries the `SitepingStore` contract, the building blocks the first-party adapters run on, and the conformance suite that proves your implementation behaves like the others.
+The four bundled adapters cover most setups, but InfinityFeedback stores are pluggable: anything that can hold records can back the widget and the dashboard. `@siteping/adapter-kit` is the published package for that — it carries the `SitepingStore` contract, the building blocks the first-party adapters run on, and the conformance suite that proves your implementation behaves like the others.
 
 ```bash
 npm i -D @siteping/adapter-kit vitest
@@ -195,4 +195,4 @@ initSiteping({ store: new MyStore(), projectName: "my-app" });
 
 In the browser, the widget stops waiting on `createFeedback` after 30 s and reports a retryable error (code `"TIMEOUT"`) so the comment popup never stays busy. It cannot cancel the call — `SitepingStore` takes no abort signal — so a late write may still land. If your store talks to the network, bound its own calls, and deduplicate on `clientId`: a resend from the same popup reuses it.
 
-If you publish one, [open an issue](https://github.com/NeosiaNexus/SitePing/issues) — we'll link it from this page.
+If you publish one, [open an issue](https://github.com/aruninf/InfinityFeedback/issues) — we'll link it from this page.

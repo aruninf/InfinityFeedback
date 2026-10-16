@@ -8,7 +8,7 @@
 
 `<SitepingInbox />` is a keyboard-first React component that lists every feedback your clients sent through [`@siteping/widget`](https://www.npmjs.com/package/@siteping/widget) — annotated screenshots re-rendered as the client framed them, status triage (open / in progress / resolved / won't fix) with undo, search, and deep links back to the live page.
 
-Part of [SitePing](https://github.com/NeosiaNexus/SitePing) — **[documentation](https://siteping.dev/docs/dashboard)**.
+Part of [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) — **[documentation](https://siteping.dev/docs/dashboard)**.
 
 ## Install
 
@@ -52,4 +52,4 @@ Props, headless API, theming variables with the correct override selectors, cust
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

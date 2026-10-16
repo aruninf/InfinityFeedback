@@ -362,7 +362,7 @@ export interface SitepingBaseConfig {
    * read at widget init time, not on every render. Hosts that need live
    * identity updates after sign-in/sign-out should currently remount the
    * widget (e.g. via a React `key` on the wrapping component). See
-   * https://github.com/NeosiaNexus/SitePing/issues/85 for tracking a
+   * https://github.com/aruninf/InfinityFeedback/issues/85 for tracking a
    * future enhancement that propagates identity updates without a remount.
    */
   identity?: SitepingIdentity | undefined;

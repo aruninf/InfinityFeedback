@@ -3,7 +3,7 @@ title: Comment fonctionne l'ancrage
 description: Pourquoi les annotations survivent aux déploiements — sélecteurs, replis et limites assumées.
 ---
 
-Quand un client dessine un rectangle, SitePing ne stocke pas des coordonnées à l'écran — celles-ci cassent au premier changement de mise en page. Il ancre l'annotation à l'**élément du DOM** situé dessous, avec des replis en couches :
+Quand un client dessine un rectangle, InfinityFeedback ne stocke pas des coordonnées à l'écran — celles-ci cassent au premier changement de mise en page. Il ancre l'annotation à l'**élément du DOM** situé dessous, avec des replis en couches :
 
 1. **Un sélecteur CSS minimal** pour l'élément, calculé au moment de la capture.
 2. **Un XPath** vers le même élément, comme premier repli.
@@ -23,7 +23,7 @@ Quand une ancre ne peut pas être résolue lors d'une visite ultérieure, son ma
 
 ## Web components et Shadow DOM
 
-Le contenu des shadow roots **ouverts** — Lit, Stencil, Shoelace, Ionic et la plupart des composants de design system — est ancré comme n'importe quel autre élément. Un sélecteur CSS ne pouvant pas franchir la frontière d'un shadow root, SitePing enregistre un sélecteur par arbre, de l'hôte le plus externe vers l'intérieur, reliés par ` >>> ` :
+Le contenu des shadow roots **ouverts** — Lit, Stencil, Shoelace, Ionic et la plupart des composants de design system — est ancré comme n'importe quel autre élément. Un sélecteur CSS ne pouvant pas franchir la frontière d'un shadow root, InfinityFeedback enregistre un sélecteur par arbre, de l'hôte le plus externe vers l'intérieur, reliés par ` >>> ` :
 
 ```text
 #pricing >>> plan-card:nth-of-type(2) >>> .title

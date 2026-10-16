@@ -4,7 +4,7 @@
 
 # @siteping/integration-issues
 
-One GitHub or GitLab issue per [SitePing](https://github.com/NeosiaNexus/SitePing) feedback, opened, closed and reopened along with it through `@siteping/server` lifecycle hooks. No database column: the issue's first line links it to its feedback. Any other tracker plugs in through the `IssueTracker` interface.
+One GitHub or GitLab issue per [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) feedback, opened, closed and reopened along with it through `@siteping/server` lifecycle hooks. No database column: the issue's first line links it to its feedback. Any other tracker plugs in through the `IssueTracker` interface.
 
 **[Documentation](https://siteping.dev/docs/issue-trackers)**
 
@@ -40,4 +40,4 @@ Token permissions, the status mapping, what an issue contains, failure handling 
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

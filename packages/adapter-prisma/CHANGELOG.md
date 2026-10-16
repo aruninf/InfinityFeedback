@@ -1,95 +1,95 @@
 # Changelog
 
-## [0.6.7](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.6...adapter-prisma-v0.6.7) (2026-10-05)
+## [0.6.7](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.6...adapter-prisma-v0.6.7) (2026-10-05)
 
 
 ### Features
 
-* **adapter-drizzle:** add a Drizzle adapter for PostgreSQL and libSQL ([eb9c3a1](https://github.com/NeosiaNexus/SitePing/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
-* **adapter-kit:** export isUnreachableOffset and FeedbackCreateOutcome; conformance suite grows to 56 tests ([eb9c3a1](https://github.com/NeosiaNexus/SitePing/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
-* **adapter-localstorage:** expose createFeedbackIfAbsent ([eb9c3a1](https://github.com/NeosiaNexus/SitePing/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
-* **adapter-memory:** expose createFeedbackIfAbsent ([eb9c3a1](https://github.com/NeosiaNexus/SitePing/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
-* **adapter-prisma:** delegate createSitepingHandler to @siteping/server and accept every server option (access, hooks, beforeCreate, presentFeedback, waitUntil, logger, describeError) ([53cb760](https://github.com/NeosiaNexus/SitePing/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
-* **core,server:** add discussion threads to feedback ([7cdca3b](https://github.com/NeosiaNexus/SitePing/commit/7cdca3b754c4b9e749772add28baafca38e021bb)), closes [#320](https://github.com/NeosiaNexus/SitePing/issues/320) [#280](https://github.com/NeosiaNexus/SitePing/issues/280)
-* **screenshot-storage:** add S3, Cloudflare Images, file and DB storage ([a2672f5](https://github.com/NeosiaNexus/SitePing/commit/a2672f509b47f6f5181d480cfc0ee0faed361885))
-* **server:** add @siteping/server, a store-agnostic HTTP handler ([53cb760](https://github.com/NeosiaNexus/SitePing/commit/53cb7603eaed6b19334a8178e947a2322b939ec1)), closes [#306](https://github.com/NeosiaNexus/SitePing/issues/306)
-* **server:** address independent audit findings ([511c3ff](https://github.com/NeosiaNexus/SitePing/commit/511c3ff732405331074066a6a262a5135817e760)), closes [#406](https://github.com/NeosiaNexus/SitePing/issues/406) [#364](https://github.com/NeosiaNexus/SitePing/issues/364)
-* **widget,dashboard:** show and reply to discussion threads ([d6721e4](https://github.com/NeosiaNexus/SitePing/commit/d6721e4972593229578ade211ac2b006f9dffb0f)), closes [#320](https://github.com/NeosiaNexus/SitePing/issues/320) [#331](https://github.com/NeosiaNexus/SitePing/issues/331)
+* **adapter-drizzle:** add a Drizzle adapter for PostgreSQL and libSQL ([eb9c3a1](https://github.com/aruninf/InfinityFeedback/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
+* **adapter-kit:** export isUnreachableOffset and FeedbackCreateOutcome; conformance suite grows to 56 tests ([eb9c3a1](https://github.com/aruninf/InfinityFeedback/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
+* **adapter-localstorage:** expose createFeedbackIfAbsent ([eb9c3a1](https://github.com/aruninf/InfinityFeedback/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
+* **adapter-memory:** expose createFeedbackIfAbsent ([eb9c3a1](https://github.com/aruninf/InfinityFeedback/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
+* **adapter-prisma:** delegate createSitepingHandler to @siteping/server and accept every server option (access, hooks, beforeCreate, presentFeedback, waitUntil, logger, describeError) ([53cb760](https://github.com/aruninf/InfinityFeedback/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
+* **core,server:** add discussion threads to feedback ([7cdca3b](https://github.com/aruninf/InfinityFeedback/commit/7cdca3b754c4b9e749772add28baafca38e021bb)), closes [#320](https://github.com/aruninf/InfinityFeedback/issues/320) [#280](https://github.com/aruninf/InfinityFeedback/issues/280)
+* **screenshot-storage:** add S3, Cloudflare Images, file and DB storage ([a2672f5](https://github.com/aruninf/InfinityFeedback/commit/a2672f509b47f6f5181d480cfc0ee0faed361885))
+* **server:** add @siteping/server, a store-agnostic HTTP handler ([53cb760](https://github.com/aruninf/InfinityFeedback/commit/53cb7603eaed6b19334a8178e947a2322b939ec1)), closes [#306](https://github.com/aruninf/InfinityFeedback/issues/306)
+* **server:** address independent audit findings ([511c3ff](https://github.com/aruninf/InfinityFeedback/commit/511c3ff732405331074066a6a262a5135817e760)), closes [#406](https://github.com/aruninf/InfinityFeedback/issues/406) [#364](https://github.com/aruninf/InfinityFeedback/issues/364)
+* **widget,dashboard:** show and reply to discussion threads ([d6721e4](https://github.com/aruninf/InfinityFeedback/commit/d6721e4972593229578ade211ac2b006f9dffb0f)), closes [#320](https://github.com/aruninf/InfinityFeedback/issues/320) [#331](https://github.com/aruninf/InfinityFeedback/issues/331)
 
 
 ### Bug Fixes
 
-* **adapter-prisma,widget:** harden validation, webhooks, CORS, ordering ([c5a3328](https://github.com/NeosiaNexus/SitePing/commit/c5a33285618116d8527d432a870e6438b8fccc70)), closes [#323](https://github.com/NeosiaNexus/SitePing/issues/323) [#307](https://github.com/NeosiaNexus/SitePing/issues/307) [#249](https://github.com/NeosiaNexus/SitePing/issues/249)
-* **adapter-prisma:** make @prisma/client an optional peer dependency (Bun then no longer warns about an out-of-range @prisma/client; npm and pnpm still do) ([53cb760](https://github.com/NeosiaNexus/SitePing/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
-* **adapter-prisma:** notify webhooks once when the store reports its inserts; answer far pages from count ([eb9c3a1](https://github.com/NeosiaNexus/SitePing/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
-* **adapter-prisma:** run screenshot deletes at most 32 at a time ([d2ee80c](https://github.com/NeosiaNexus/SitePing/commit/d2ee80c858f24f4f7dc22a0ed1c70649efcef5e5))
-* address independent audit findings on discussion threads ([988e95e](https://github.com/NeosiaNexus/SitePing/commit/988e95e8be134f4027cfd9c5a943e5c81dcf3903)), closes [#320](https://github.com/NeosiaNexus/SitePing/issues/320)
-* **core:** serialize collection-store mutations, harden store contracts ([21b81ef](https://github.com/NeosiaNexus/SitePing/commit/21b81efe995d6c45ef15a7ab1e300a821214311e)), closes [#341](https://github.com/NeosiaNexus/SitePing/issues/341) [#164](https://github.com/NeosiaNexus/SitePing/issues/164)
-* **dashboard:** append list params to an endpoint with a query string ([c61e3bf](https://github.com/NeosiaNexus/SitePing/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
-* **screenshot-storage:** address independent audit findings ([d2ee80c](https://github.com/NeosiaNexus/SitePing/commit/d2ee80c858f24f4f7dc22a0ed1c70649efcef5e5))
-* **widget:** clamp diagnostics buffers to the server's 50 / 20 entries ([c61e3bf](https://github.com/NeosiaNexus/SitePing/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
-* **widget:** harden the send path, retry queue and captured context ([c61e3bf](https://github.com/NeosiaNexus/SitePing/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471)), closes [#307](https://github.com/NeosiaNexus/SitePing/issues/307) [#342](https://github.com/NeosiaNexus/SitePing/issues/342) [#344](https://github.com/NeosiaNexus/SitePing/issues/344)
-* **widget:** record diagnostics URLs without credentials, query or hash ([c61e3bf](https://github.com/NeosiaNexus/SitePing/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
+* **adapter-prisma,widget:** harden validation, webhooks, CORS, ordering ([c5a3328](https://github.com/aruninf/InfinityFeedback/commit/c5a33285618116d8527d432a870e6438b8fccc70)), closes [#323](https://github.com/aruninf/InfinityFeedback/issues/323) [#307](https://github.com/aruninf/InfinityFeedback/issues/307) [#249](https://github.com/aruninf/InfinityFeedback/issues/249)
+* **adapter-prisma:** make @prisma/client an optional peer dependency (Bun then no longer warns about an out-of-range @prisma/client; npm and pnpm still do) ([53cb760](https://github.com/aruninf/InfinityFeedback/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
+* **adapter-prisma:** notify webhooks once when the store reports its inserts; answer far pages from count ([eb9c3a1](https://github.com/aruninf/InfinityFeedback/commit/eb9c3a1b546e6ca20cf94f02c8cd73ac3e7d97b0))
+* **adapter-prisma:** run screenshot deletes at most 32 at a time ([d2ee80c](https://github.com/aruninf/InfinityFeedback/commit/d2ee80c858f24f4f7dc22a0ed1c70649efcef5e5))
+* address independent audit findings on discussion threads ([988e95e](https://github.com/aruninf/InfinityFeedback/commit/988e95e8be134f4027cfd9c5a943e5c81dcf3903)), closes [#320](https://github.com/aruninf/InfinityFeedback/issues/320)
+* **core:** serialize collection-store mutations, harden store contracts ([21b81ef](https://github.com/aruninf/InfinityFeedback/commit/21b81efe995d6c45ef15a7ab1e300a821214311e)), closes [#341](https://github.com/aruninf/InfinityFeedback/issues/341) [#164](https://github.com/aruninf/InfinityFeedback/issues/164)
+* **dashboard:** append list params to an endpoint with a query string ([c61e3bf](https://github.com/aruninf/InfinityFeedback/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
+* **screenshot-storage:** address independent audit findings ([d2ee80c](https://github.com/aruninf/InfinityFeedback/commit/d2ee80c858f24f4f7dc22a0ed1c70649efcef5e5))
+* **widget:** clamp diagnostics buffers to the server's 50 / 20 entries ([c61e3bf](https://github.com/aruninf/InfinityFeedback/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
+* **widget:** harden the send path, retry queue and captured context ([c61e3bf](https://github.com/aruninf/InfinityFeedback/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471)), closes [#307](https://github.com/aruninf/InfinityFeedback/issues/307) [#342](https://github.com/aruninf/InfinityFeedback/issues/342) [#344](https://github.com/aruninf/InfinityFeedback/issues/344)
+* **widget:** record diagnostics URLs without credentials, query or hash ([c61e3bf](https://github.com/aruninf/InfinityFeedback/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
 
 
 ### Refactoring
 
-* **adapter-prisma:** share the 200-char identity cap with the widget ([c61e3bf](https://github.com/NeosiaNexus/SitePing/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
+* **adapter-prisma:** share the 200-char identity cap with the widget ([c61e3bf](https://github.com/aruninf/InfinityFeedback/commit/c61e3bfc7b511faf2fbcd5d5509b89e58ba43471))
 
 
 ### Documentation
 
-* **adapter-memory:** mount the store with @siteping/server and point the conformance suite at @siteping/adapter-kit/testing ([53cb760](https://github.com/NeosiaNexus/SitePing/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
+* **adapter-memory:** mount the store with @siteping/server and point the conformance suite at @siteping/adapter-kit/testing ([53cb760](https://github.com/aruninf/InfinityFeedback/commit/53cb7603eaed6b19334a8178e947a2322b939ec1))
 
-## [0.6.6](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.5...adapter-prisma-v0.6.6) (2026-09-23)
+## [0.6.6](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.5...adapter-prisma-v0.6.6) (2026-09-23)
 
 
 ### Miscellaneous
 
-* **deps:** bump the production-dependencies group across 1 directory with 6 updates ([#299](https://github.com/NeosiaNexus/SitePing/issues/299)) ([b8b0655](https://github.com/NeosiaNexus/SitePing/commit/b8b06553c7c860c27229f9447f6bd5082b27011e))
-* **deps:** bump the production-dependencies group across 1 directory with 7 updates ([#287](https://github.com/NeosiaNexus/SitePing/issues/287)) ([2d7d264](https://github.com/NeosiaNexus/SitePing/commit/2d7d2646a75276d6c8b53beb9ff070726ebdf5e4))
+* **deps:** bump the production-dependencies group across 1 directory with 6 updates ([#299](https://github.com/aruninf/InfinityFeedback/issues/299)) ([b8b0655](https://github.com/aruninf/InfinityFeedback/commit/b8b06553c7c860c27229f9447f6bd5082b27011e))
+* **deps:** bump the production-dependencies group across 1 directory with 7 updates ([#287](https://github.com/aruninf/InfinityFeedback/issues/287)) ([2d7d264](https://github.com/aruninf/InfinityFeedback/commit/2d7d2646a75276d6c8b53beb9ff070726ebdf5e4))
 
-## [0.6.5](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.4...adapter-prisma-v0.6.5) (2026-09-03)
+## [0.6.5](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.4...adapter-prisma-v0.6.5) (2026-09-03)
 
 
 ### Bug Fixes
 
-* harden webhooks, validation, store engine and adapter contracts (audit 2026-09) ([#279](https://github.com/NeosiaNexus/SitePing/issues/279)) ([7336eea](https://github.com/NeosiaNexus/SitePing/commit/7336eea220938df4b34c8ece9270d246f772e61d))
+* harden webhooks, validation, store engine and adapter contracts (audit 2026-09) ([#279](https://github.com/aruninf/InfinityFeedback/issues/279)) ([7336eea](https://github.com/aruninf/InfinityFeedback/commit/7336eea220938df4b34c8ece9270d246f772e61d))
 
 
 ### Miscellaneous
 
-* **deps-dev:** bump vitest from 3.2.7 to 4.1.10 in the vitest group across 1 directory ([#240](https://github.com/NeosiaNexus/SitePing/issues/240)) ([dca82f0](https://github.com/NeosiaNexus/SitePing/commit/dca82f078173c78d1703a7a8512adf1bffbc24ca))
+* **deps-dev:** bump vitest from 3.2.7 to 4.1.10 in the vitest group across 1 directory ([#240](https://github.com/aruninf/InfinityFeedback/issues/240)) ([dca82f0](https://github.com/aruninf/InfinityFeedback/commit/dca82f078173c78d1703a7a8512adf1bffbc24ca))
 
-## [0.6.4](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.3...adapter-prisma-v0.6.4) (2026-07-28)
+## [0.6.4](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.3...adapter-prisma-v0.6.4) (2026-07-28)
 
 
 ### Features
 
-* type-safe contracts + mechanical extension paths (adapters, locales, packages) ([#247](https://github.com/NeosiaNexus/SitePing/issues/247)) ([75cd2f5](https://github.com/NeosiaNexus/SitePing/commit/75cd2f5024509e5552bfbcf7587a0d67819909a6))
+* type-safe contracts + mechanical extension paths (adapters, locales, packages) ([#247](https://github.com/aruninf/InfinityFeedback/issues/247)) ([75cd2f5](https://github.com/aruninf/InfinityFeedback/commit/75cd2f5024509e5552bfbcf7587a0d67819909a6))
 
-## [0.6.3](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.2...adapter-prisma-v0.6.3) (2026-07-26)
+## [0.6.3](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.2...adapter-prisma-v0.6.3) (2026-07-26)
 
 
 ### Documentation
 
-* **site:** ship siteping.dev/docs — verified bilingual documentation + slimmed READMEs ([#241](https://github.com/NeosiaNexus/SitePing/issues/241)) ([252073f](https://github.com/NeosiaNexus/SitePing/commit/252073f2eb11a99980d81eecb5ed37b23c3894f8))
+* **site:** ship siteping.dev/docs — verified bilingual documentation + slimmed READMEs ([#241](https://github.com/aruninf/InfinityFeedback/issues/241)) ([252073f](https://github.com/aruninf/InfinityFeedback/commit/252073f2eb11a99980d81eecb5ed37b23c3894f8))
 
-## [0.6.2](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.1...adapter-prisma-v0.6.2) (2026-07-25)
-
-
-### Bug Fixes
-
-* ship fully resolvable type declarations for every published package ([#232](https://github.com/NeosiaNexus/SitePing/issues/232)) ([01a8085](https://github.com/NeosiaNexus/SitePing/commit/01a8085c90fab4e721eaede8def9a4d9f5eefcc0))
-
-## [0.6.1](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.6.0...adapter-prisma-v0.6.1) (2026-07-24)
+## [0.6.2](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.1...adapter-prisma-v0.6.2) (2026-07-25)
 
 
 ### Bug Fixes
 
-* **adapter-prisma:** redact authorEmail and strip clientId from unauthenticated HTTP responses (fixes [#105](https://github.com/NeosiaNexus/SitePing/issues/105)) ([#208](https://github.com/NeosiaNexus/SitePing/issues/208)) ([2a511e7](https://github.com/NeosiaNexus/SitePing/commit/2a511e762009ac1a17d5b6e08e6ab1bf04884b0d))
+* ship fully resolvable type declarations for every published package ([#232](https://github.com/aruninf/InfinityFeedback/issues/232)) ([01a8085](https://github.com/aruninf/InfinityFeedback/commit/01a8085c90fab4e721eaede8def9a4d9f5eefcc0))
 
-## [0.6.0](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.5.0...adapter-prisma-v0.6.0) (2026-07-24)
+## [0.6.1](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.6.0...adapter-prisma-v0.6.1) (2026-07-24)
+
+
+### Bug Fixes
+
+* **adapter-prisma:** redact authorEmail and strip clientId from unauthenticated HTTP responses (fixes [#105](https://github.com/aruninf/InfinityFeedback/issues/105)) ([#208](https://github.com/aruninf/InfinityFeedback/issues/208)) ([2a511e7](https://github.com/aruninf/InfinityFeedback/commit/2a511e762009ac1a17d5b6e08e6ab1bf04884b0d))
+
+## [0.6.0](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.5.0...adapter-prisma-v0.6.0) (2026-07-24)
 
 
 ### ⚠ BREAKING CHANGES
@@ -99,134 +99,134 @@
 
 ### Features
 
-* **adapter-localstorage:** persist screenshotRegion and support multi-status queries ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **adapter-memory:** persist screenshotRegion and support multi-status queries ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **adapter-prisma:** 4-state validation, statuses bucket filter, screenshotRegion persistence ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **cli:** generate the screenshotRegion Json? column via siteping init/sync ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **core:** 4-state feedback model, screenshotRegion metadata and multi-status queries ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **dashboard:** @siteping/dashboard — Linear-style triage inbox with keyboard-first triage, annotated-screenshot evidence card, store/endpoint modes, theming and 7 locales; WCAG 2.1 AA verified (axe: zero violations) ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **demo:** freelancer inbox at /demo/inbox with a seeded triage backlog and real annotated screenshots ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* triage inbox (@siteping/dashboard), 4-state statuses and annotated screenshots ([#201](https://github.com/NeosiaNexus/SitePing/issues/201)) ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
-* **widget:** render the 4-state model and capture screenshots with context ([07e4c29](https://github.com/NeosiaNexus/SitePing/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **adapter-localstorage:** persist screenshotRegion and support multi-status queries ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **adapter-memory:** persist screenshotRegion and support multi-status queries ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **adapter-prisma:** 4-state validation, statuses bucket filter, screenshotRegion persistence ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **cli:** generate the screenshotRegion Json? column via siteping init/sync ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **core:** 4-state feedback model, screenshotRegion metadata and multi-status queries ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **dashboard:** @siteping/dashboard — Linear-style triage inbox with keyboard-first triage, annotated-screenshot evidence card, store/endpoint modes, theming and 7 locales; WCAG 2.1 AA verified (axe: zero violations) ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **demo:** freelancer inbox at /demo/inbox with a seeded triage backlog and real annotated screenshots ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* triage inbox (@siteping/dashboard), 4-state statuses and annotated screenshots ([#201](https://github.com/aruninf/InfinityFeedback/issues/201)) ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
+* **widget:** render the 4-state model and capture screenshots with context ([07e4c29](https://github.com/aruninf/InfinityFeedback/commit/07e4c29af5d522fd1a8ea124d6365b4e3463c96b))
 
-## [0.5.0](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.9...adapter-prisma-v0.5.0) (2026-07-23)
+## [0.5.0](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.9...adapter-prisma-v0.5.0) (2026-07-23)
 
 
 ### ⚠ BREAKING CHANGES
 
-* **adapter-prisma:** migrate validation to zod 4 ([#199](https://github.com/NeosiaNexus/SitePing/issues/199))
+* **adapter-prisma:** migrate validation to zod 4 ([#199](https://github.com/aruninf/InfinityFeedback/issues/199))
 
 ### Features
 
-* **adapter-prisma:** migrate validation to zod 4 ([#199](https://github.com/NeosiaNexus/SitePing/issues/199)) ([2dd9604](https://github.com/NeosiaNexus/SitePing/commit/2dd9604236750becf4039e8050924e29891ae267))
+* **adapter-prisma:** migrate validation to zod 4 ([#199](https://github.com/aruninf/InfinityFeedback/issues/199)) ([2dd9604](https://github.com/aruninf/InfinityFeedback/commit/2dd9604236750becf4039e8050924e29891ae267))
 
-## [0.4.9](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.8...adapter-prisma-v0.4.9) (2026-06-10)
+## [0.4.9](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.8...adapter-prisma-v0.4.9) (2026-06-10)
 
 
 ### Features
 
-* tech-lead review quick wins — a11y keyboard flow, store persistence contract, CSV formula guard ([#165](https://github.com/NeosiaNexus/SitePing/issues/165)) ([56f17a9](https://github.com/NeosiaNexus/SitePing/commit/56f17a99f159dc12707bcc0ec2f7c906bddf2a3f))
+* tech-lead review quick wins — a11y keyboard flow, store persistence contract, CSV formula guard ([#165](https://github.com/aruninf/InfinityFeedback/issues/165)) ([56f17a9](https://github.com/aruninf/InfinityFeedback/commit/56f17a99f159dc12707bcc0ec2f7c906bddf2a3f))
 
-## [0.4.8](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.7...adapter-prisma-v0.4.8) (2026-05-19)
+## [0.4.8](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.7...adapter-prisma-v0.4.8) (2026-05-19)
 
 
 ### Refactoring
 
-* **types:** tighten type safety across all packages ([1b212ba](https://github.com/NeosiaNexus/SitePing/commit/1b212bae29177e71abc15a88d0133b73cde346e5))
+* **types:** tighten type safety across all packages ([1b212ba](https://github.com/aruninf/InfinityFeedback/commit/1b212bae29177e71abc15a88d0133b73cde346e5))
 
-## [0.4.7](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.6...adapter-prisma-v0.4.7) (2026-05-18)
+## [0.4.7](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.6...adapter-prisma-v0.4.7) (2026-05-18)
 
 
 ### Features
 
-* **adapter-prisma:** webhooks for Slack, Discord, and generic endpoints ([#70](https://github.com/NeosiaNexus/SitePing/issues/70)) ([74a42a7](https://github.com/NeosiaNexus/SitePing/commit/74a42a730dc2ce99de2978d90c378e9794fd1fd5))
-* **widget:** capture last 50 console messages + failed network requests with each feedback ([#71](https://github.com/NeosiaNexus/SitePing/issues/71)) ([726e1b8](https://github.com/NeosiaNexus/SitePing/commit/726e1b8a0d4dcef726ec6dc468c168fb73396dbc))
+* **adapter-prisma:** webhooks for Slack, Discord, and generic endpoints ([#70](https://github.com/aruninf/InfinityFeedback/issues/70)) ([74a42a7](https://github.com/aruninf/InfinityFeedback/commit/74a42a730dc2ce99de2978d90c378e9794fd1fd5))
+* **widget:** capture last 50 console messages + failed network requests with each feedback ([#71](https://github.com/aruninf/InfinityFeedback/issues/71)) ([726e1b8](https://github.com/aruninf/InfinityFeedback/commit/726e1b8a0d4dcef726ec6dc468c168fb73396dbc))
 
 
 ### Bug Fixes
 
-* **adapter-prisma:** require apiKey for DELETE/PATCH in production ([#63](https://github.com/NeosiaNexus/SitePing/issues/63)) ([16df663](https://github.com/NeosiaNexus/SitePing/commit/16df6634100a4669b330e69784a5853bea55367e))
-* **adapter-prisma:** sanitize clientId to prevent path traversal ([#64](https://github.com/NeosiaNexus/SitePing/issues/64)) ([f911e2f](https://github.com/NeosiaNexus/SitePing/commit/f911e2f14efe1e7309cb2053bdb419bbbedc66a8))
+* **adapter-prisma:** require apiKey for DELETE/PATCH in production ([#63](https://github.com/aruninf/InfinityFeedback/issues/63)) ([16df663](https://github.com/aruninf/InfinityFeedback/commit/16df6634100a4669b330e69784a5853bea55367e))
+* **adapter-prisma:** sanitize clientId to prevent path traversal ([#64](https://github.com/aruninf/InfinityFeedback/issues/64)) ([f911e2f](https://github.com/aruninf/InfinityFeedback/commit/f911e2f14efe1e7309cb2053bdb419bbbedc66a8))
 
 
 ### Miscellaneous
 
-* **deps:** reclassify @medv/finder, widen prisma peer range, harmonize engines ([#74](https://github.com/NeosiaNexus/SitePing/issues/74)) ([b28465d](https://github.com/NeosiaNexus/SitePing/commit/b28465dc762077a535b79dbaffb51faa73f68538))
+* **deps:** reclassify @medv/finder, widen prisma peer range, harmonize engines ([#74](https://github.com/aruninf/InfinityFeedback/issues/74)) ([b28465d](https://github.com/aruninf/InfinityFeedback/commit/b28465dc762077a535b79dbaffb51faa73f68538))
 
-## [0.4.6](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.5...adapter-prisma-v0.4.6) (2026-05-06)
+## [0.4.6](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.5...adapter-prisma-v0.4.6) (2026-05-06)
 
 
 ### Bug Fixes
 
-* **adapter-prisma:** make ?search filter work on SQLite ([#46](https://github.com/NeosiaNexus/SitePing/issues/46)) ([d555e6c](https://github.com/NeosiaNexus/SitePing/commit/d555e6c678e290ae2f531685a1ee2197b30b3edc))
+* **adapter-prisma:** make ?search filter work on SQLite ([#46](https://github.com/aruninf/InfinityFeedback/issues/46)) ([d555e6c](https://github.com/aruninf/InfinityFeedback/commit/d555e6c678e290ae2f531685a1ee2197b30b3edc))
 
-## [0.4.5](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.4...adapter-prisma-v0.4.5) (2026-05-06)
+## [0.4.5](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.4...adapter-prisma-v0.4.5) (2026-05-06)
 
 
 ### Features
 
-* page-scoped annotations + semantic anchors (data-feedback-anchor) ([#55](https://github.com/NeosiaNexus/SitePing/issues/55)) ([db722de](https://github.com/NeosiaNexus/SitePing/commit/db722deab9f69cfdeb6fbe6f7f0bea57e2995e5c))
-* screenshot capture with pluggable storage ([#58](https://github.com/NeosiaNexus/SitePing/issues/58)) ([f14ecd2](https://github.com/NeosiaNexus/SitePing/commit/f14ecd2f2f05a547a4a52e5a6ad4d794d438008c))
+* page-scoped annotations + semantic anchors (data-feedback-anchor) ([#55](https://github.com/aruninf/InfinityFeedback/issues/55)) ([db722de](https://github.com/aruninf/InfinityFeedback/commit/db722deab9f69cfdeb6fbe6f7f0bea57e2995e5c))
+* screenshot capture with pluggable storage ([#58](https://github.com/aruninf/InfinityFeedback/issues/58)) ([f14ecd2](https://github.com/aruninf/InfinityFeedback/commit/f14ecd2f2f05a547a4a52e5a6ad4d794d438008c))
 
 
 ### Tests
 
-* raise unit test coverage to 99%+ across all packages ([f2e9f9e](https://github.com/NeosiaNexus/SitePing/commit/f2e9f9e406a6f0a3971b9df864af4e96d742304a))
+* raise unit test coverage to 99%+ across all packages ([f2e9f9e](https://github.com/aruninf/InfinityFeedback/commit/f2e9f9e406a6f0a3971b9df864af4e96d742304a))
 
-## [0.4.4](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.3...adapter-prisma-v0.4.4) (2026-05-02)
+## [0.4.4](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.3...adapter-prisma-v0.4.4) (2026-05-02)
 
 
 ### Bug Fixes
 
-* **widget,adapter-prisma:** harden retry queue, panel UX, and PATCH ownership ([26301d3](https://github.com/NeosiaNexus/SitePing/commit/26301d34f23c62a7e623741ca6f815841088ca4f))
+* **widget,adapter-prisma:** harden retry queue, panel UX, and PATCH ownership ([26301d3](https://github.com/aruninf/InfinityFeedback/commit/26301d34f23c62a7e623741ca6f815841088ca4f))
 
-## [0.4.3](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.4.2...adapter-prisma-v0.4.3) (2026-04-04)
+## [0.4.3](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.4.2...adapter-prisma-v0.4.3) (2026-04-04)
 
 
 ### Features
 
-* add adapter-memory, adapter-localstorage, and widget store mode ([efa8b64](https://github.com/NeosiaNexus/SitePing/commit/efa8b64197d1a612146b0c988f1b708cd594b373))
+* add adapter-memory, adapter-localstorage, and widget store mode ([efa8b64](https://github.com/aruninf/InfinityFeedback/commit/efa8b64197d1a612146b0c988f1b708cd594b373))
 
 
 ### Bug Fixes
 
-* **adapter-prisma:** auth granularity, project isolation, clean API surface ([416685d](https://github.com/NeosiaNexus/SitePing/commit/416685d6c3d3fe128e460373eb07fda88556a231))
-* comprehensive audit — 44 fixes across all packages ([60652ad](https://github.com/NeosiaNexus/SitePing/commit/60652ad03eb070fe18e2a4e943ea013f76070896))
+* **adapter-prisma:** auth granularity, project isolation, clean API surface ([416685d](https://github.com/aruninf/InfinityFeedback/commit/416685d6c3d3fe128e460373eb07fda88556a231))
+* comprehensive audit — 44 fixes across all packages ([60652ad](https://github.com/aruninf/InfinityFeedback/commit/60652ad03eb070fe18e2a4e943ea013f76070896))
 
 
 ### Tests
 
-* add 184 tests across all packages + E2E for new features ([b7f869c](https://github.com/NeosiaNexus/SitePing/commit/b7f869c119c0a76f089d4e889d5b48be8b3e06c1))
+* add 184 tests across all packages + E2E for new features ([b7f869c](https://github.com/aruninf/InfinityFeedback/commit/b7f869c119c0a76f089d4e889d5b48be8b3e06c1))
 
 
 ### Documentation
 
-* update all documentation for adapter pattern and new packages ([bcdbd46](https://github.com/NeosiaNexus/SitePing/commit/bcdbd46cfe7f504f659335176e9454b66f3a4547))
+* update all documentation for adapter pattern and new packages ([bcdbd46](https://github.com/aruninf/InfinityFeedback/commit/bcdbd46cfe7f504f659335176e9454b66f3a4547))
 
-## [0.4.0](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.3.0...adapter-prisma-v0.4.0) (2026-04-03)
+## [0.4.0](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.3.0...adapter-prisma-v0.4.0) (2026-04-03)
 
 ### Features
 
-* docs, CI/CD, DX, and security improvements ([ae451e3](https://github.com/NeosiaNexus/SitePing/commit/ae451e3f883b61449fb87e965bc32d9bfb98c588))
-* **repo:** add community files, npm keywords, and badges ([30645b4](https://github.com/NeosiaNexus/SitePing/commit/30645b42d5a52d945e7e3919ce197020e0f261d6))
+* docs, CI/CD, DX, and security improvements ([ae451e3](https://github.com/aruninf/InfinityFeedback/commit/ae451e3f883b61449fb87e965bc32d9bfb98c588))
+* **repo:** add community files, npm keywords, and badges ([30645b4](https://github.com/aruninf/InfinityFeedback/commit/30645b42d5a52d945e7e3919ce197020e0f261d6))
 
 ### Bug Fixes
 
-* resolve merge conflicts and post-merge issues ([e342ee8](https://github.com/NeosiaNexus/SitePing/commit/e342ee8cc3ade358d2a8c3685f5ae4080849c3ab))
+* resolve merge conflicts and post-merge issues ([e342ee8](https://github.com/aruninf/InfinityFeedback/commit/e342ee8cc3ade358d2a8c3685f5ae4080849c3ab))
 
 ### Refactoring
 
-* **architecture:** add SitepingStore interface, sync types ([c2afd03](https://github.com/NeosiaNexus/SitePing/commit/c2afd0353554c4277217059be94325ac60387835))
+* **architecture:** add SitepingStore interface, sync types ([c2afd03](https://github.com/aruninf/InfinityFeedback/commit/c2afd0353554c4277217059be94325ac60387835))
 
 ### Tests
 
-* add coverage config, CLI tests, fix test quality ([27ad06d](https://github.com/NeosiaNexus/SitePing/commit/27ad06dd7dfcb75c5ffbf40a3a9c1282d89728f9))
+* add coverage config, CLI tests, fix test quality ([27ad06d](https://github.com/aruninf/InfinityFeedback/commit/27ad06dd7dfcb75c5ffbf40a3a9c1282d89728f9))
 
 ### Documentation
 
-* add README and LICENSE to each published package ([d4cfbf1](https://github.com/NeosiaNexus/SitePing/commit/d4cfbf16ca79562195be6374e74463f6aae7ceb0))
+* add README and LICENSE to each published package ([d4cfbf1](https://github.com/aruninf/InfinityFeedback/commit/d4cfbf16ca79562195be6374e74463f6aae7ceb0))
 
-## [0.3.0](https://github.com/NeosiaNexus/SitePing/compare/adapter-prisma-v0.2.0...adapter-prisma-v0.3.0) (2026-04-03)
+## [0.3.0](https://github.com/aruninf/InfinityFeedback/compare/adapter-prisma-v0.2.0...adapter-prisma-v0.3.0) (2026-04-03)
 
 ### ⚠ BREAKING CHANGES
 
@@ -234,4 +234,4 @@
 
 ### Refactoring
 
-* **main:** migrate to @siteping/* monorepo with Turborepo ([e6b19a9](https://github.com/NeosiaNexus/SitePing/commit/e6b19a9675ca67eb5fc3888b45718c7e71a34b93))
+* **main:** migrate to @siteping/* monorepo with Turborepo ([e6b19a9](https://github.com/aruninf/InfinityFeedback/commit/e6b19a9675ca67eb5fc3888b45718c7e71a34b93))

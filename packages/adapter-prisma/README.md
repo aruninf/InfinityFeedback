@@ -4,7 +4,7 @@
 
 # @siteping/adapter-prisma
 
-The production server adapter for [SitePing](https://github.com/NeosiaNexus/SitePing) — one endpoint that validates, authenticates, and persists client feedback in your database.
+The production server adapter for [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) — one endpoint that validates, authenticates, and persists client feedback in your database.
 
 **[Documentation](https://siteping.dev/docs/adapters/prisma)** · **[live demo](https://siteping.dev/demo)**
 
@@ -45,4 +45,4 @@ The Prisma options, the exact Prisma schema and screenshot storage: **[siteping.
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

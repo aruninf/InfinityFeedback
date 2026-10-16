@@ -4,7 +4,7 @@
 
 # @siteping/server
 
-The HTTP endpoint of [SitePing](https://github.com/NeosiaNexus/SitePing) over any store, for any framework — validation, auth, CORS, redaction, hooks and webhooks on the Fetch API. No Node built-in: it runs on Node, Bun, Deno and edge workers.
+The HTTP endpoint of [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) over any store, for any framework — validation, auth, CORS, redaction, hooks and webhooks on the Fetch API. No Node built-in: it runs on Node, Bun, Deno and edge workers.
 
 **[Documentation](https://siteping.dev/docs/server)**
 
@@ -38,4 +38,4 @@ Mounting recipes, every option, custom access with CSRF protection, lifecycle ho
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

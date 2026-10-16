@@ -9,8 +9,8 @@ export default async function Layout({ params, children }: { params: Promise<{ l
   return (
     <DocsLayout
       tree={source.getPageTree(lang)}
-      nav={{ title: "SitePing", mode: "top" }}
-      githubUrl="https://github.com/NeosiaNexus/SitePing"
+      nav={{ title: "InfinityFeedback", mode: "top" }}
+      githubUrl="https://github.com/aruninf/InfinityFeedback"
     >
       {children}
       <DocsWidget locale={lang} />

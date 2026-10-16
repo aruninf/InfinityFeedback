@@ -1,9 +1,9 @@
 ---
 title: CLI
-description: Set up and check SitePing from the command line — init, sync, status, and doctor.
+description: Set up and check InfinityFeedback from the command line — init, sync, status, and doctor.
 ---
 
-The SitePing CLI automates project setup and health checks. It ships as a single self-contained binary with **zero runtime dependencies** and requires **Node 20 or newer**.
+The InfinityFeedback CLI automates project setup and health checks. It ships as a single self-contained binary with **zero runtime dependencies** and requires **Node 20 or newer**.
 
 ```bash
 npx @siteping/cli --help
@@ -19,7 +19,7 @@ npx @siteping/cli init
 
 `init` walks you through two confirmations:
 
-1. **Sync Prisma models** — if a schema is found (see [schema detection](#schema-detection)), it offers to add the SitePing models: `SitepingFeedback`, `SitepingAnnotation` and `SitepingComment` (the [discussion threads](/docs/comments)).
+1. **Sync Prisma models** — if a schema is found (see [schema detection](#schema-detection)), it offers to add the InfinityFeedback models: `SitepingFeedback`, `SitepingAnnotation` and `SitepingComment` (the [discussion threads](/docs/comments)).
 2. **Generate the API route** — offers to create a Next.js App Router route that serves the widget. The file goes to `app/api/siteping/route.ts`, or `src/app/api/siteping/route.ts` when your project uses a `src/` layout. If both `app/` and `src/app/` exist, `app/` wins — Next.js itself ignores `src/app/` then. An existing route — `route.ts`, `.tsx`, `.js` or `.jsx` — is never overwritten.
 
 The generated route imports two things you need to provide yourself — the CLI installs nothing:
@@ -38,11 +38,11 @@ npx @siteping/cli sync
 npx @siteping/cli sync --schema prisma/schema.prisma
 ```
 
-`sync` merges the SitePing models into your Prisma schema without prompts, which makes it safe for CI and update scripts. It works at the AST level:
+`sync` merges the InfinityFeedback models into your Prisma schema without prompts, which makes it safe for CI and update scripts. It works at the AST level:
 
-- creates the SitePing models that are missing — in the database schema of the existing SitePing models (their `@@schema`) when your datasource declares several `schemas`,
+- creates the InfinityFeedback models that are missing — in the database schema of the existing InfinityFeedback models (their `@@schema`) when your datasource declares several `schemas`,
 - adds any missing fields and `@@index` blocks,
-- rewrites SitePing fields whose type or attributes drifted from the expected shape — keeping the parts that are yours (`@map` column names, relation names, a relation's `onUpdate`, comments); an `@ignore` counts as drift, since the adapter writes every SitePing column,
+- rewrites InfinityFeedback fields whose type or attributes drifted from the expected shape — keeping the parts that are yours (`@map` column names, relation names, a relation's `onUpdate`, comments); an `@ignore` counts as drift, since the adapter writes every InfinityFeedback column,
 - **never touches fields you added yourself.**
 
 When something changed, it reminds you to run `npx prisma db push` and `npx prisma generate` (Prisma 7 no longer generates the client from `db push`). An existing schema gets `SitepingComment` and the `SitepingFeedback.comments` relation this way: apply them before you deploy — see [discussion threads with Prisma](/docs/adapters/prisma#discussion-threads). Running it twice in a row is a no-op.
@@ -60,7 +60,7 @@ npx @siteping/cli status --schema prisma/schema.prisma
 
 | Check | What it looks at |
 |---|---|
-| Prisma schema | All three SitePing models present, every field up to date — the exact diff `sync` applies, so type, optionality, attributes and their arguments (`@unique`, `@db.Text`, `onDelete: Cascade`, …) and `@@index` blocks all count |
+| Prisma schema | All three InfinityFeedback models present, every field up to date — the exact diff `sync` applies, so type, optionality, attributes and their arguments (`@unique`, `@db.Text`, `onDelete: Cascade`, …) and `@@index` blocks all count |
 | API route | `api/siteping/route.ts` (or `.tsx`, `.js`, `.jsx`) exists in the app directory Next.js serves — `app/`, or `src/app/` when there is no `app/` |
 | Package | `@siteping/widget` listed in your `package.json` |
 | Widget integration | `initSiteping` referenced somewhere in `src/`, `app/`, or `pages/` |
@@ -74,7 +74,7 @@ npx @siteping/cli doctor --url http://localhost:3000 --endpoint /api/siteping
 npx @siteping/cli doctor --url https://app.example.com --api-key "$SITEPING_API_KEY"
 ```
 
-`doctor` sends one GET request to your running server and tells you whether a SitePing handler answered (10-second timeout). Pass **both** `--url` and `--endpoint` to run it non-interactively — either one you omit becomes a prompt. When the endpoint is configured with an `apiKey` and `GET` is not public, pass the key with `--api-key`; without it, a `401` comes with a hint.
+`doctor` sends one GET request to your running server and tells you whether a InfinityFeedback handler answered (10-second timeout). Pass **both** `--url` and `--endpoint` to run it non-interactively — either one you omit becomes a prompt. When the endpoint is configured with an `apiKey` and `GET` is not public, pass the key with `--api-key`; without it, a `401` comes with a hint.
 
 `--url` is your site's base URL, not the endpoint's: a path in it (a Next.js `basePath`, for example) goes in front of `--endpoint`. With `--url https://example.com/app --endpoint /api/siteping`, `doctor` requests `https://example.com/app/api/siteping`.
 
@@ -91,7 +91,7 @@ All commands are scriptable. `0` means success, `1` means something needs fixing
 | `status` | Schema, API route, `package.json`, or the widget dependency is missing, or the schema can't be read or parsed |
 | `doctor` | Non-200 response, unreachable server, or timeout |
 
-Two caveats for CI pipelines: `status` exits `0` (with a hint to run `sync`) when schema fields merely drift, and `doctor` exits `0` on any 200 response — even one that is not a SitePing handler (it prints a warning instead). Neither is a strict gate.
+Two caveats for CI pipelines: `status` exits `0` (with a hint to run `sync`) when schema fields merely drift, and `doctor` exits `0` on any 200 response — even one that is not a InfinityFeedback handler (it prints a warning instead). Neither is a strict gate.
 
 ## Schema detection
 
@@ -101,4 +101,4 @@ When you don't pass `--schema`, the CLI probes three locations in order:
 2. `schema.prisma`
 3. `prisma/schema/schema.prisma`
 
-A schema file inside a `schema/` folder (like `prisma/schema/schema.prisma`) is treated as part of a multi-file schema, as Prisma does: every `.prisma` file in that folder and its subfolders counts, except under `node_modules` and hidden folders. SitePing models are found and updated in whichever file holds them; missing ones are added to the file you pointed at. A folder that holds a `package.json` is a project root, never a schema folder, even if it is named `schema`. A multi-file schema folder with any other name isn't detected: the CLI then only sees the file you point it at.
+A schema file inside a `schema/` folder (like `prisma/schema/schema.prisma`) is treated as part of a multi-file schema, as Prisma does: every `.prisma` file in that folder and its subfolders counts, except under `node_modules` and hidden folders. InfinityFeedback models are found and updated in whichever file holds them; missing ones are added to the file you pointed at. A folder that holds a `package.json` is a project root, never a schema folder, even if it is named `schema`. A multi-file schema folder with any other name isn't detected: the CLI then only sees the file you point it at.

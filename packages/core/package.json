@@ -15,7 +15,7 @@
       "default": "./src/testing.ts"
     }
   },
-  "author": "neosianexus",
+  "author": "Arun Infinity",
   "scripts": {
     "build": "tsc",
     "check": "tsc --noEmit -p tsconfig.check.json",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://siteping.dev",
   "bugs": {
-    "url": "https://github.com/NeosiaNexus/SitePing/issues"
+    "url": "https://github.com/aruninf/InfinityFeedback/issues"
   },
   "keywords": [
     "siteping",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeosiaNexus/SitePing.git",
+    "url": "git+https://github.com/aruninf/InfinityFeedback.git",
     "directory": "packages/core"
   }
 }

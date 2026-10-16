@@ -4,7 +4,7 @@
 
 # @siteping/adapter-localstorage
 
-Client-side store for [SitePing](https://github.com/NeosiaNexus/SitePing) — the whole feedback loop in the browser, no server required. Ideal for demos, prototypes, and docs sites.
+Client-side store for [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) — the whole feedback loop in the browser, no server required. Ideal for demos, prototypes, and docs sites.
 
 **[Documentation](https://siteping.dev/docs/adapters/localstorage)**
 
@@ -30,4 +30,4 @@ Each visitor sees only their own feedback — data never leaves their browser. C
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

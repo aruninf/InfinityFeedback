@@ -4,7 +4,7 @@
 
 # @siteping/screenshot-storage
 
-Screenshot storage for the [SitePing](https://github.com/NeosiaNexus/SitePing) stores: upload screenshots to **Cloudflare R2, AWS S3** or any S3-compatible bucket, **Cloudflare Images**, **your database** through Drizzle, or **your disk**, and keep only their URL in the feedback. No AWS SDK and no runtime dependency: it runs on Node, Bun, Deno and edge workers.
+Screenshot storage for the [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) stores: upload screenshots to **Cloudflare R2, AWS S3** or any S3-compatible bucket, **Cloudflare Images**, **your database** through Drizzle, or **your disk**, and keep only their URL in the feedback. No AWS SDK and no runtime dependency: it runs on Node, Bun, Deno and edge workers.
 
 **[Documentation](https://siteping.dev/docs/adapters/screenshot-storage)**
 
@@ -44,4 +44,4 @@ Every backend, serving screenshots from your app, least-privilege credentials, o
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)

@@ -13,7 +13,7 @@ Only the latest published version of each `@siteping/*` package receives securit
 
 **Do not open a public issue for security vulnerabilities.**
 
-Instead, report it privately through GitHub: [open a private vulnerability report](https://github.com/NeosiaNexus/SitePing/security/advisories/new). Only the maintainers can see it, and the fix and advisory are coordinated with you there. This is the only reporting channel.
+Instead, report it privately through GitHub: [open a private vulnerability report](https://github.com/aruninf/InfinityFeedback/security/advisories/new). Only the maintainers can see it, and the fix and advisory are coordinated with you there. This is the only reporting channel.
 
 ### What to include
 

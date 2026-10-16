@@ -1,4 +1,4 @@
-# Contributing to SitePing
+# Contributing to InfinityFeedback
 
 Thanks for your interest in contributing! This guide covers everything you need to get started.
 
@@ -11,7 +11,7 @@ Thanks for your interest in contributing! This guide covers everything you need 
 ## Setup
 
 ```bash
-git clone https://github.com/NeosiaNexus/SitePing.git
+git clone https://github.com/aruninf/InfinityFeedback.git
 cd SitePing
 bun install
 ```
@@ -304,7 +304,7 @@ non-positive page number, which no hand-written case had thought to try.
 
 ## Supply-chain posture
 
-The repo is scored by [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/NeosiaNexus/SitePing)
+The repo is scored by [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/aruninf/InfinityFeedback)
 on every push to `main`. Three of its checks are deliberately left alone, and
 each one looks like an easy win until you measure it:
 

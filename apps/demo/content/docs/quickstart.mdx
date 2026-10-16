@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 npx @siteping/cli init
 ```
 
-Confirm both prompts: the CLI adds the SitePing models to your Prisma schema and generates the API route (`app/api/siteping/route.ts`, or under `src/app/` if that's your layout). Then push the schema to your database:
+Confirm both prompts: the CLI adds the InfinityFeedback models to your Prisma schema and generates the API route (`app/api/siteping/route.ts`, or under `src/app/` if that's your layout). Then push the schema to your database:
 
 ```bash
 npx prisma db push
@@ -50,7 +50,7 @@ export function Feedback() {
 }
 ```
 
-Run your dev server and look bottom-right: the SitePing button is there. Draw a rectangle on anything, type a comment, hit Send.
+Run your dev server and look bottom-right: the InfinityFeedback button is there. Draw a rectangle on anything, type a comment, hit Send.
 
 By default the widget shows in development but **never in production builds** — that's the point: clients review on dev/staging URLs. For a staging environment that builds in production mode, pass `forceShow: true`.
 

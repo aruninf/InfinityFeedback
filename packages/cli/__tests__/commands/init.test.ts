@@ -240,7 +240,7 @@ model SitepingFeedback {
 
       expect(p.log.warn).toHaveBeenCalledWith(expect.stringContaining("No schema.prisma file found"));
       expect(p.log.info).toHaveBeenCalledWith(
-        expect.stringContaining("https://github.com/NeosiaNexus/SitePing#prisma-schema-1"),
+        expect.stringContaining("https://github.com/aruninf/InfinityFeedback#prisma-schema-1"),
       );
     });
   });

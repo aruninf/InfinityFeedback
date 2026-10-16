@@ -1,19 +1,19 @@
 # Default — catch-all
-* @NeosiaNexus
+* @InfinitySoftSystem @ArunInfinity
 
 # Packages
-packages/widget/    @NeosiaNexus
-packages/dashboard/ @NeosiaNexus
-packages/adapter-prisma/ @NeosiaNexus
-packages/adapter-drizzle/ @NeosiaNexus
-packages/adapter-memory/ @NeosiaNexus
-packages/adapter-localstorage/ @NeosiaNexus
-packages/adapter-kit/ @NeosiaNexus
-packages/server/    @NeosiaNexus
-packages/integration-issues/ @NeosiaNexus
-packages/screenshot-storage/ @NeosiaNexus
-packages/cli/       @NeosiaNexus
-packages/core/      @NeosiaNexus
+packages/widget/    @InfinitySoftSystem @ArunInfinity
+packages/dashboard/ @InfinitySoftSystem @ArunInfinity
+packages/adapter-prisma/ @InfinitySoftSystem @ArunInfinity
+packages/adapter-drizzle/ @InfinitySoftSystem @ArunInfinity
+packages/adapter-memory/ @InfinitySoftSystem @ArunInfinity
+packages/adapter-localstorage/ @InfinitySoftSystem @ArunInfinity
+packages/adapter-kit/ @InfinitySoftSystem @ArunInfinity
+packages/server/    @InfinitySoftSystem @ArunInfinity
+packages/integration-issues/ @InfinitySoftSystem @ArunInfinity
+packages/screenshot-storage/ @InfinitySoftSystem @ArunInfinity
+packages/cli/       @InfinitySoftSystem @ArunInfinity
+packages/core/      @InfinitySoftSystem @ArunInfinity
 
 # CI/CD & config
-.github/            @NeosiaNexus
+.github/            @InfinitySoftSystem @ArunInfinity

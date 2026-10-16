@@ -4,7 +4,7 @@
 
 # @siteping/adapter-memory
 
-In-memory store for [SitePing](https://github.com/NeosiaNexus/SitePing) — zero dependencies, zero configuration. For tests, previews, and throwaway demos: restart the process and it's gone.
+In-memory store for [InfinityFeedback](https://github.com/aruninf/InfinityFeedback) — zero dependencies, zero configuration. For tests, previews, and throwaway demos: restart the process and it's gone.
 
 **[Documentation](https://siteping.dev/docs/adapters/memory)**
 
@@ -36,4 +36,4 @@ Writing your own adapter? This store passes the shared 67-test conformance suite
 
 ## License
 
-[MIT](https://github.com/NeosiaNexus/SitePing/blob/main/LICENSE)
+[MIT](https://github.com/aruninf/InfinityFeedback/blob/main/LICENSE)
