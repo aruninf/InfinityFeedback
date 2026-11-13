@@ -42,7 +42,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitest/coverage-istanbul": "^5.0.5",
     "fast-check": "^4.10.2",
-    "jsdom": "30.1.3",
+    "jsdom": "31.0.0",
     "knip": "^6.44.0",
     "publint": "0.3.25",
     "react": "^19.3.0",
